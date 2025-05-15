@@ -7,30 +7,38 @@
 - **Actual**: Error message about missing OS
 - **Fix**: Mounted correct ISO and set proper boot order
 
-## Bug 2 - No space left on device
-- **Type**:
-- **Steps to Reproduce**:
-- **Expected**:
-- **Actual**:
-- **Fix**:
+## Bug 2 - Register button is non-functional and misaligned
+- **Type**: UI
+- **Steps to Reproduce**: Go to register page and observe the form
+- **Expected**: A clearly styled, clickable "Register" button that submits the form
+- **Actual**: "Register is just plain text with no form action
+- **Fix**: Syntax error fix: name="password -> name="password"
+- **Severity**: High
+- **Screenshot**: https://imgur.com/a/rjsCK9l
 
-- **Type**:
-- **Steps to Reproduce**:
-- **Expected**:
-- **Actual**:
-- **Fix**:
+## Bug 3 - Non-Functional Image Upload Page
+- **Steps to Reproduce**: Go to upload page and observe the form
+- **Expected**: A page with a title, "Browse..." and "Upload" buttons
+- **Actual**: Syntax error appears on the page
+- **Fix**: Syntax error fix: 'gif' =? -> 'gif'=>
+- **Severity**: High
+- **Screenshot**: https://imgur.com/a/Fc2octs
 
-- **Type**:
+- **Type**: 
 - **Steps to Reproduce**:
 - **Expected**:
 - **Actual**:
 - **Fix**:
+- **Severity**:
+- **Screenshot**:
 
-- **Type**:
+- **Type**: 
 - **Steps to Reproduce**:
 - **Expected**:
 - **Actual**:
 - **Fix**:
+- **Severity**:
+- **Screenshot**:
 
 - **Type**:
 - **Steps to Reproduce**:
