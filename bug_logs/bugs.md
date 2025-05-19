@@ -1,7 +1,7 @@
  # QA bug log - QA Web App Project
 
 ## Bug 1 - Ubuntu VM Failed to Boot
-- **Type**: Environment Setup
+- **Description**: 
 - **Steps to Reproduce**: Created VM in VirtualBox without selecting OS ISO
 - **Expected**: VM boots Ubuntu installer
 - **Actual**: Error message about missing OS
@@ -66,17 +66,18 @@
 - **Steps to Reproduce**: 1. Go to upload.php page | 2. Log in, if not already | 3. Upload a valid file image larger than 2MB | 4. Click "Upload"
 - **Expected**: User should page with "Error: File too large (max 2MB)" error message.
 - **Actual**: The page displays a generic "Upload failed" message.
-- **Fix**: 
+- **Fix**: PHP's $_FILES['image']['error'] was not checked, so when the file size is too large it simply returns UPLOAD_ERR_INI_SIZE before size check. Added a condtional block to check the eize and handle known upload errors before continuing.
 - **Severity**: Minor (undesired behavior, may confuse user) 
-- **Screenshot**: *The bug was resolved before a screenshot was taken*
+- **Screenshot**: https://imgur.com/a/lA3Sq9P
 
-- **Description**:
-- **Steps to Reproduce**:
-- **Expected**:
-- **Actual**:
-- **Fix**:
-- **Severity**:
-- **Screenshot**:
+## Bug 9 - Missing Clarification Message in Viewing Gallery Page
+- **Description**: When testing to verify the gallery page displays a message prompting the user to first upload a valid image file when a user does not upload any images yet and tries to view gallery, the gallery page does not show any message.
+- **Steps to Reproduce**: 1. Go to login.php page | 2. Login with valid credentials | 3. Click "Login" | 4. Go to gallery.php page | 5. Observe the form
+- **Expected**: If the user has not uploaded any images, the page should display a "To view a thumbnail, first  upload a valid image file."
+- **Actual**: The gallery does not display any message.
+- **Fix**: Add store_result() function to buffer the result set and allow row counting. Then, add a condition if($stmt->num_rows === 0) to check if there are nay uploaded images. This will return the "To view a thumbnail, first  upload a valid image file." message if there are no uploaded images.
+- **Severity**: Minor (undesired behavior, may confuse user) 
+- **Screenshot**: https://imgur.com/a/5trtvCf
 
 - **Description**:
 - **Steps to Reproduce**:
