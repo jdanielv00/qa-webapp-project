@@ -53,55 +53,30 @@
 - **Screenshot**: https://imgur.com/a/4AmaWhn
 
 ## Bug 7 - Duplicate Email Registration Error
-- **Description**: When testing for duplicate email registration, the page displays a fatal error and it crashes registration process.
-- **Steps to Reproduce**: 1. Go to register.php page | 2. Try registering with an email already registered | 3. Click "Register" | 4. Observe the form
-- **Expected**: A friendly error message should appear stating "Email already registered."
+- **Description**: Attempting to register with an already registered email causes a fatal error and terminates the process.
+- **Steps to Reproduce**: 1. Go to register.php page | 2. Register with an email that already exists in the database | 3. Click "Register"
+- **Expected**: A friendly "Email already registered." error message should appear.
 - **Actual**: The page displays a PHP fatal error with stack trace.
-- **Fix**: Add logic to detect duplicate entry error and show friendly straight-forward message. 
-- **Severity**: Minor (user may understand the problem, but it is an undesired behavior) 
+- **Fix**: Implemented error handling to catch duplicate email entry and show friendly straight-forward message. 
+- **Severity**: Minor (Undesired behavior, but somewhat understandable to user) 
 - **Screenshot**: https://imgur.com/a/wl84Qi9
 
 ## Bug 8 - Image Upload Fails Silently on Oversize Upload
-- **Description**: When testing for uploading image files that are over the 2MB limit, the page simply shows a failed upload message. This is unclear and leaves user confused as to why the upload failed.
-- **Steps to Reproduce**: 1. Go to upload.php page | 2. Log in, if not already | 3. Upload a valid file image larger than 2MB | 4. Click "Upload"
-- **Expected**: User should page with "Error: File too large (max 2MB)" error message.
+- **Description**: When testing for uploading image files that are over the 2MB limit, the page simply shows a failed upload message with no clear reason provided.
+- **Steps to Reproduce**: 1. Go to login.php and login | 2. Go to upload.php page | 3. Upload a valid file image larger than 2MB | 4. Click "Upload"
+- **Expected**: Page displays a "Error: File too large (max 2MB)" error message.
 - **Actual**: The page displays a generic "Upload failed" message.
-- **Fix**: PHP's $_FILES['image']['error'] was not checked, so when the file size is too large it simply returns UPLOAD_ERR_INI_SIZE before size check. Added a condtional block to check the eize and handle known upload errors before continuing.
-- **Severity**: Minor (undesired behavior, may confuse user) 
+- **Fix**: Added a conditional check for $_FILES['image']['error'] to detect UPLOAD_ERR_INI_SIZE and display a meaningful error message.
+- **Severity**: Minor (Undesired behavior, may confuse user) 
 - **Screenshot**: https://imgur.com/a/lA3Sq9P
 
-## Bug 9 - Missing Clarification Message in Viewing Gallery Page
-- **Description**: When testing to verify the gallery page displays a message prompting the user to first upload a valid image file when a user does not upload any images yet and tries to view gallery, the gallery page does not show any message.
-- **Steps to Reproduce**: 1. Go to login.php page | 2. Login with valid credentials | 3. Click "Login" | 4. Go to gallery.php page | 5. Observe the form
-- **Expected**: If the user has not uploaded any images, the page should display a "To view a thumbnail, first  upload a valid image file."
-- **Actual**: The gallery does not display any message.
-- **Fix**: Add store_result() function to buffer the result set and allow row counting. Then, add a condition if($stmt->num_rows === 0) to check if there are nay uploaded images. This will return the "To view a thumbnail, first  upload a valid image file." message if there are no uploaded images.
-- **Severity**: Minor (undesired behavior, may confuse user) 
+## Bug 9 - Missing Message in Viewing Gallery Page
+- **Description**: If a user has not uploaded any images, the gallery.php page does not display any clarification message. This may confuse users into thinking the page is broken or malfunctioning.
+- **Steps to Reproduce**: 1. Go to login.php page | 2. Login with valid credentials | 3. Click "Login" | 4. Go to gallery.php page
+- **Expected**: The message "To view a thumbnail, first  upload a valid image file." should be shown when no images exist in the database.
+- **Actual**: The gallery does not display any message or indication of next steps.
+- **Fix**: Called $stmt->store_result() function to enable row count, then added a condition if($stmt->num_rows === 0) to show the proper message when the image list is empty.
+- **Severity**: Minor (Undesired behavior, may confuse user)
 - **Screenshot**: https://imgur.com/a/5trtvCf
-
-- **Description**:
-- **Steps to Reproduce**:
-- **Expected**:
-- **Actual**:
-- **Fix**:
-- **Severity**:
-- **Screenshot**:
-
-- **Description**:
-- **Steps to Reproduce**:
-- **Expected**:
-- **Actual**:
-- **Fix**:
-- **Severity**:
-- **Screenshot**:
-
-- **Description**:
-- **Steps to Reproduce**:
-- **Expected**:
-- **Actual**:
-- **Fix**:
-- **Severity**:
-- **Screenshot**:
-
 
 
