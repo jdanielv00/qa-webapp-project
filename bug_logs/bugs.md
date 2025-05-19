@@ -1,55 +1,55 @@
  # QA bug log - QA Web App Project
 
 ## Bug 1 - Ubuntu VM Failed to Boot
-- **Description**: 
-- **Steps to Reproduce**: Created VM in VirtualBox without selecting OS ISO
-- **Expected**: VM boots Ubuntu installer
-- **Actual**: Error message about missing OS
-- **Fix**: Mounted correct ISO and set proper boot order
+- **Description**: When creating a new virtual machine in VirtualBox, the user failed to mount an ISO image, resulting in a boot failure.
+- **Steps to Reproduce**: 1. Open VirtualBox | 2. Create a new VM | 3. Do not select an operating system ISO | 4. Start the VM
+- **Expected**: The Ubuntu installer should launch successfully.
+- **Actual**: The VM returns an error message stating that no bootable medium was found.
+- **Fix**: Mounted correct Ubuntu ISO and adjusted the boot order to prioritize the virtual optical drive.
 
-## Bug 2 - Register button is non-functional and misaligned
-- **Description**: When attempting to register a new account, the user is unable to do so because the "Register" button does not exist because it is simply text and not an actionable button. Addtionally, the text is misaligned and not under the password input box.
-- **Steps to Reproduce**: 1. Go to register.php page |2. Observe the form
-- **Expected**: A clearly styled, clickable "Register" button that submits the form that is placed right under the "Password" input box.
-- **Actual**: "Register" is just plain text with no form action and it's placed on the right of "Password" option. 
-- **Fix**: Syntax error fix: there was a missing closing quote, name="password -> name="password" that caused both bugs.
-- **Severity**: Critical (bug blocks core functionality)
+## Bug 2 - Register Button is Non-Functional and Misaligned
+- **Description**: The "Register" button on the registration page is rendered as plain text, not as a clickable button. Additionally, it is misaligned, appearing beside the password field instead of below it.
+- **Steps to Reproduce**: 1. Go to register.php page | 2. Observe the form
+- **Expected**: A clearly styled, clickable "Register" button placed directly beneath the password input field.
+- **Actual**: "Register" is just plain text with no form action and it's placed on the right of password field. 
+- **Fix**: Fixed a syntax error: missing closing quote in name="password" caused HTML rendering issues.
+- **Severity**: Critical (Blocks account creation)
 - **Screenshot**: https://imgur.com/a/rjsCK9l
 
 ## Bug 3 - Syntax Error Prevents Access to Upload Page
-- **Description**: When attempting to access the upload.php page, the operation fails with the page displaying a Parse error.
+- **Description**: Visiting the upload.php page results in a parse error due to incorrect array syntax.
 - **Steps to Reproduce**: 1. Go to upload.php page | 2. Observe the form
-- **Expected**: A page with a title, "Browse..." and "Upload" buttons.
-- **Actual**: The page displays a parse error.
-- **Fix**: Syntax error fix: 'gif' =? -> 'gif'=> 
-- **Severity**: Critical (bug blocks core functionality)
+- **Expected**: Page displays file upload form with "Browse..." and "Upload" buttons.
+- **Actual**: PHP parse error prevents page from properly loading.
+- **Fix**: Fixed syntax error: incorrect assignment 'gif' =? changed to 'gif'=> . 
+- **Severity**: Critical (Blocks core functionality)
 - **Screenshot**: https://imgur.com/a/Fc2octs
 
 ## Bug 4 - Image Upload Fails Due to Directory Permission Error
-- **Description**: When attempting to upload an image via the upload.php page, the operation fails with the following error missages displayed on the web page (see inserted image).
-- **Steps to Reproduce**: 1. Go to upload.php page | 2. Click "Browse..." and select any valid image file | 3. Click the "Upload" button | 4. Observe the error message on the page
+- **Description**: When attempting to upload an image via the upload.php page, the operation fails due to improper file permissions on the upload directories.
+- **Steps to Reproduce**: 1. Go to upload.php page | 2. Click "Browse..." and select a valid image file | 3. Click the "Upload" button 
 - **Expected**: The selected image should be uploaded and saved to he uploads/ directory and an image uploaded and thumbnail created message should be shown. 
-- **Actual**: The page displays PHP warnings and an "Upload failed" message because the file is not saved to the server.
-- **Fix**: The issue was resolved by assigning correct access and ownership of the uploads/ and thumbnails/ directories to the www-data user.
-- **Severity**: Critical (bug blocks core functionality)
+- **Actual**: The page displays PHP warnings and an "Upload failed" message.
+- **Fix**: Corrected directory ownership and permissions for uploads/ and thumbnails/ using chmod and chown.
+- **Severity**: Critical (Blocks core functionality)
 - **Screenshot**: https://imgur.com/a/0VTJsg4
 
 ## Bug 5 - Image Upload Fails Due to Missing 'images' Table in Database
-- **Description**: When attempting to upload an image via the upload.php page, the operation fails and a PHP fatal error is displayed. The error states that the 'images' table does not exist in the 'qawebapp' database.
-- **Steps to Reproduce**: 1. Go to upload.php page | 2. Click "Browse..." and select any valid image file | 3. Click the "Upload" button | 4. Observe the error message on the page
-- **Expected**: The selected image should be uploaded and saved to the uploads/ directory. A success message should be shown confirming the upload and thumbnail creation. 
-- **Actual**: The image displays a PHP fatal error. The image upload fails and no file is saved.
+- **Description**: When attempting to upload an image via the upload.php page, uploading fails with a fatal database error because the 'images' table does not exist.
+- **Steps to Reproduce**: 1. Go to upload.php page | 2. Click "Browse..." and select a valid image file | 3. Click the "Upload" button 
+- **Expected**: The selected image should be saved to the 'images' table and a success message should be shown confirming the upload and thumbnail creation. 
+- **Actual**: The image displays a PHP fatal error indicating table qawebapp.images does not exist.
 - **Fix**: Accessed the MySQL/MariaDB console and ran a SQL script to create the missing 'images' table.
-- **Severity**: Critical (bug blocks core functionality)
+- **Severity**: Critical (Blocks core functionality)
 - **Screenshot**: https://imgur.com/a/Ra7FdYV
 
 ## Bug 6 - Syntax Error Prevents Access to Gallery Page
-- **Description**: When attempting to access the gallery.php page, the application returns a PHP parse error due to a syntax issue in the session validation code. 
-- **Steps to Reproduce**: 1. Open gallery.php | 2. Ensure user is logged in  | 3. Observe the form
-- **Expected**: The gallery page should load and show the created thumbnail of the image uploaded.
+- **Description**: When attempting to access the gallery.php page, the page fails to load due to a syntax error in the session check statement. 
+- **Steps to Reproduce**: 1. Open login.php page and login with valid credentials | 2. Access gallery.php page
+- **Expected**: The gallery page should load successfully and displays uploaded image thumbnails.
 - **Actual**: The page displays a PHP parse error.
-- **Fix**: Syntax error: there was a missing closing quote in line 4 "if (!isset($_SESSION['user_id'])) {" 'user_id' was not properly closed.
-- **Severity**: Critical (bug blocks core functionality)
+- **Fix**: Fixed syntax error: Added missing closing quote in condition "if (!isset($_SESSION['user_id'])) {" 'user_id' was not properly closed.
+- **Severity**: Critical (Blocks core functionality)
 - **Screenshot**: https://imgur.com/a/4AmaWhn
 
 ## Bug 7 - Duplicate Email Registration Error
