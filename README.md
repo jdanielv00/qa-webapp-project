@@ -1,39 +1,42 @@
 # qa-webapp-project
 
 ## Overview
-This is a Quality Assurance (QA) testing project for a basic web application built with PHP, MySQL, and Apache. It simulates a user gallery system where users can upload images and view them in a gallery. The focus of this project is testing and documenting bugs, edge cases, and how they were resolved.
+This is a hands-on Quality Assurance (QA) testing a user gallery system (login, registration, image uploads, and gallery functionality). This project demonstrates end-to-end manual QA testing of a PHP/MySQL web application simulating an image gallery. It focuses on:
+- Identifying functional/non-functional bugs through structured test cases.
+- Documenting resolutions for server, UI, and edge-case issues.
+- Practicing regression testing and environment validation.
 
-## QA Goals
-- Identify functional and non-functional bugs
-- Write clear, structured test cases and bug reports
-- Practice regression testing
-- Understand server and environment setup issues
-- Learn common QA troubleshooting steps
+## QA Objectives & Outcomes
+- Bug documentation: Documented 20+ test cases (Excel) with 5 critical bugs found and resolved.
+- Regression testing: Verified fixes across PHP 8.3 and MySQL versions.
+- Envinronment Debugging: Solved Apache config issues and Linux file permission errors. 
+- Edge-Case Coverage: Tested duplicate emails, invalid uploads, unauthorized access, and more.
 
 ## Testing Scope
+- User flows: Registration -> Login -> Image Upload -> View Gallery 
 - Manual testing of login, registration, upload, and gallery features
-- Environment validation (Apache, PHP, MySQL setup)
+- Environment and server validation (Apache, PHP, MySQL setup)
 - UI consistency and user feedback verification
 
-## Tech Stack
-- PHP 8+
-- MySQL
-- Apache
-- Ubuntu (via VirtualBox)
-- Manual Testing Tools (Excel, browser delevoper tools)
+## Tech Stack & Tools
+- Backend: PHP 8+, MySQL, Apache
+- Infrastructure: Ubuntu (via VirtualBox), Linux file permissions
+- QA Tools: Structured test cases (Excel), Browser DevTools, PHP error logs
+- Soft skills: Bug documentation, troubleshooting, collaboration (simulated via Git commits)
 
 ## Key QA Skills Demonstrated
-- Bug documentation
-- Testing edge cases
+- Bug Documentation: Wrote reproducible bug reports with steps, expected vs. actual results.
+- Test Coverage: prioritized high-impact edge cases
+- Process Ownership: Self-directed testing lifecycle (plan -> execute -> document -> retest)
 - Writing structured test cases
 - Analyzing error logs and warnings
-- Linux permissions and server config troubleshooting
 
 ## Notes
-This project is a personal QA initiative and was built to gain hands-on experience with real-world testing scenarios.
+- This is a personal QA project designed to gain hands-on experience with real-world testing scenarios.
+- Future Improvements: Add Selenium automation or Postman API tests.
 
 ## Contact 
-If you are a recruiter or QA hiring manager, I'd love to chat!
+If you are a recruiter or hiring manager, let's discuss how my QA skills can translate to your team!
 
 Email: jdvargasvidal@gmail.com
 LinkedIn: 
