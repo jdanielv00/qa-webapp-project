@@ -1,7 +1,7 @@
 # qa-webapp-project
 
 ## Overview
-This is a hands-on Quality Assurance (QA) testing a user gallery system (login, registration, image uploads, and gallery functionality). This project demonstrates end-to-end manual QA testing of a PHP/MySQL web application simulating an image gallery. It focuses on:
+This is a hands-on Quality Assurance (QA) project testing a user gallery system (registration, login, image uploads, and gallery functionality). This project demonstrates end-to-end manual QA testing of a PHP/MySQL web application simulating an image gallery. It focuses on:
 - Identifying functional/non-functional bugs through structured test cases.
 - Documenting resolutions for server, UI, and edge-case issues.
 - Practicing regression testing and environment validation.
