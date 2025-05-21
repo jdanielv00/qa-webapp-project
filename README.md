@@ -7,16 +7,21 @@ This is a hands-on Quality Assurance (QA) project testing a user gallery system 
 - Practicing regression testing and environment validation.
 
 ## QA Objectives & Outcomes
-- Bug documentation: Documented 20+ test cases (Excel) with 5 critical bugs found and resolved.
+- Bug documentation: Documented 20+ test cases (Excel) with 6 critical bugs found and resolved.
 - Regression testing: Verified fixes across PHP 8.3 and MySQL versions.
 - Envinronment Debugging: Solved Apache config issues and Linux file permission errors. 
 - Edge-Case Coverage: Tested duplicate emails, invalid uploads, unauthorized access, and more.
 
 ## Testing Scope
-- User flows: Registration -> Login -> Image Upload -> View Gallery 
-- Manual testing of login, registration, upload, and gallery features
-- Environment and server validation (Apache, PHP, MySQL setup)
-- UI consistency and user feedback verification
+1. Functional Testing
+- User flows: Registration -> Login -> Image Upload -> View Gallery
+- Edge cases: Empty form submissions, invalid file types (PDFs, >2MB uploads).
+2. Non-functional Testing
+- UI Consistency: Cross-browser testing.
+- Error Handling: Verified user-friendly messages for failures.
+3. Environment Validation
+- Environment and server validation (Apache, PHP, MySQL setup).
+- Verified MySQL table structures and query errors. 
 
 ## Tech Stack & Tools
 - Backend: PHP 8+, MySQL, Apache
@@ -26,8 +31,8 @@ This is a hands-on Quality Assurance (QA) project testing a user gallery system 
 
 ## Key QA Skills Demonstrated
 - Bug Documentation: Wrote reproducible bug reports with steps, expected vs. actual results.
-- Test Coverage: prioritized high-impact edge cases
-- Process Ownership: Self-directed testing lifecycle (plan -> execute -> document -> retest)
+- Test Coverage: Prioritized high-impact edge cases.
+- Process Ownership: Self-directed testing lifecycle (plan -> execute -> document -> retest).
 - Writing structured test cases
 - Analyzing error logs and warnings
 
