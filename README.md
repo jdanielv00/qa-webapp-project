@@ -44,4 +44,4 @@ This is a hands-on Quality Assurance (QA) project testing a user gallery system 
 If you are a recruiter or hiring manager, let's discuss how my QA skills can translate to your team!
 
 Email: jdvargasvidal@gmail.com
-LinkedIn: 
+LinkedIn: www.linkedin.com/in/jdanielvargas
