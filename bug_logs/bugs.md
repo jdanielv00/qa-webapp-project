@@ -6,6 +6,7 @@
 - **Expected**: The Ubuntu installer should launch successfully.
 - **Actual**: The VM returns an error message stating that no bootable medium was found.
 - **Fix**: Mounted correct Ubuntu ISO and adjusted the boot order to prioritize the virtual optical drive.
+- **Screenshot**: (Bug was solved before screenshot was taken)
 
 ## Bug 2 - Register Button is Non-Functional and Misaligned
 - **Description**: The "Register" button on the registration page is rendered as plain text, not as a clickable button. Additionally, it is misaligned, appearing beside the password field instead of below it.
