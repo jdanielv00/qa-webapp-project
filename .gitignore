@@ -1,0 +1,3 @@
+# Ignore uploaded files and logs
+uploads/
+*.log
