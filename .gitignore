@@ -1,3 +1,4 @@
-# Ignore uploaded files and logs
+# Ignore uploaded files and logs (if added later)
 uploads/
+# Ignore system files
 *.log
