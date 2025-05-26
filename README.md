@@ -37,7 +37,7 @@ This is a hands-on Quality Assurance (QA) project testing a user gallery system 
 - Analyzing error logs and warnings
 
 ## Notes
-- This project was developed as a self-guided QA initiative to gain hands-on experience testing a real web application environmnent. The backend code was scaffolded with AI assistance to simulate a production-like system, while **all QA processes**--test planning, bug discovery, documentation, and validation--were executed independently.
+- This project was developed as a self-guided QA initiative to gain hands-on experience testing a real web application environmnent. The backend code was scaffolded with AI assistance to simulate a production-like system, while **all QA processes** such as test planning, bug discovery, documentation, and validation, were executed independently.
 - Future Improvements: Add Selenium automation or Postman API tests.
 
 ## Contact 
