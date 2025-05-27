@@ -18,7 +18,7 @@ This is a hands-on Quality Assurance (QA) project testing a user gallery system 
 - Edge cases: Empty form submissions, invalid file types (PDFs, >2MB uploads).
 2. Non-functional Testing
 - UI Consistency: Cross-browser testing.
-- Error Handling: Verified user-friendly messages for failures.
+- Error Handling: Verified user friendly messages for failures.
 3. Environment Validation
 - Environment and server validation (Apache, PHP, MySQL setup).
 - Verified MySQL table structures and query errors. 
@@ -31,7 +31,7 @@ This is a hands-on Quality Assurance (QA) project testing a user gallery system 
 
 ## Key QA Skills Demonstrated
 - Bug Documentation: Wrote reproducible bug reports with steps, expected vs. actual results.
-- Test Coverage: Prioritized high-impact edge cases.
+- Test Coverage: Prioritized high impact edge cases.
 - Process Ownership: Self-directed testing lifecycle (plan -> execute -> document -> retest).
 - Writing structured test cases
 - Analyzing error logs and warnings
