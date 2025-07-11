@@ -41,8 +41,7 @@ Tools & Libraries
 - Pytest for test organization and fixtures
 - Python’s 'random' module for dynamic test data
 
-Automation Status
-While the test framework architecture is now properly structured with Pytest, the automated tests are not yet passing due to several foundational issues - including XPath syntax errors ('/button' vs '//button'), missing Selenium 'By' imports, and UI output not matching test assertions. These early-stage implementation challenges are expected when developing automation expertise, and each one has provided valuable lessons about test precision and validation workflows.
+Automation Status: While the test framework architecture is now properly structured with Pytest, the automated tests are not yet passing due to several foundational issues - including XPath syntax errors ('/button' vs '//button'), missing Selenium 'By' imports, and UI output not matching test assertions. These early-stage implementation challenges are expected when developing automation expertise, and each one has provided valuable lessons about test precision and validation workflows.
 
 Note: This test suite reflects my hands-on journey in learning test automation. I’ve deliberately preserved these initial failures to demonstrate real-world learning by showcasing common automation challenges (XPath syntax, dynamic waits, assertion mismatches), highlight problem-solving growth through documented debugging processes, and emphasize the QA mindset (progress often starts with identifying what doesn’t work).
 
