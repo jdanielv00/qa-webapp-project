@@ -60,7 +60,9 @@ Note: This test suite reflects my hands-on journey in learning test automation. 
 - Future Improvements: Postman API tests.
 
 ## Contact 
-If you are a recruiter or hiring manager, let's discuss how my QA skills can translate to your team!
+Feel free to connect with me!
 
 Email: jdvargasvidal@gmail.com |
 LinkedIn: www.linkedin.com/in/jdanielvargas
+
+---
